@@ -1,13 +1,14 @@
 from pickletools import optimize
 from random import shuffle
+import re
+from tkinter import Y
 from black import out
 import numpy as np
 import json
 import torch
+from NeauralNetwork import bag_of_words, tokenize, stem
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-
-from NeauralNetwork import bag_of_words, tokenize, stem
 from Brain import NeuralNet
 
 with open("intents.json", "r") as f:
@@ -30,6 +31,7 @@ ignore_words = [",", "?", "/", ".", "!"]
 all_words = [stem(w) for w in all_words if w not in ignore_words]
 all_words = sorted(set(all_words))
 tags = sorted(set(tags))
+
 x_train = []
 y_trian = []
 
@@ -44,12 +46,14 @@ for (pattern_sentence, tag) in xy:
 x_train = np.array(x_train)
 y_trian = np.array(y_trian)
 
+
 num_epochs = 1000
 batch_size = 8
 learning_rate = 0.001
 input_size = len(x_train[0])
 hidden_size = 8
 output_size = len(tags)
+
 print("Training The Model...")
 
 
@@ -63,23 +67,24 @@ class ChatDataset(Dataset):
         return self.x_data[index], self.y_data[index]
 
 
-dataset = ChatDataset()
+dt = ChatDataset()
+
 train_loader = DataLoader(
-    dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=0
+    dataset=[dt], batch_size=batch_size, shuffle=True, num_workers=0,
 )
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
-# model
+# # model
 
 model = NeuralNet(input_size, hidden_size, output_size).to(device=device)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
+# NOTE: errors here
 
 for epoch in range(num_epochs):
-    for (words, labels) in train_loader:
+    for (words, labels) in enumerate(train_loader):
         words = words.to(device)
         labels = labels.to(dtype=torch.long).to(device)
         outputs = model(words)
