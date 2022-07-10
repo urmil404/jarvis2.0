@@ -1,6 +1,21 @@
 {
   "intents": [
     {
+      "tag": "identity",
+      "patterns": [
+        "your name",
+        "what is your name",
+        "who are you",
+        "what are you"
+      ],
+      "responses": [
+        "Jarvis",
+        "I am Jarvis",
+        "Hello, i am jarvis",
+        "Hi, i am jarvis"
+      ]
+    },
+    {
       "tag": "greeting",
       "patterns": [
         "Hi",
@@ -8,13 +23,11 @@
         "How are you",
         "Is anyone there?",
         "Hello",
-        "Hello Jarvis",
-        "Good day"
+        "Hello Jarvis"
       ],
       "responses": [
-        "Hey :-)",
         "Hello Sir",
-        "Hello, thanks for visiting",
+        "Hello, nice too see you",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
       ]
