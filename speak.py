@@ -7,11 +7,11 @@ def Bol(Text):
     engine.setProperty('voices',voices[0].id)
     engine.setProperty('rate',170)
     print("    ")
-    print(f"=>{Text}")
+    print(f"JARVIS==>{Text}")
     engine.say(Text)
     engine.runAndWait()
     print(" ")
 
 
 if __name__=="__main__":
-    Bol("Hello Biradar")
+    Bol("Hello Sir")
