@@ -45,14 +45,14 @@
     {
       "tag": "types",
       "patterns": [
-        "Which types of coffee and tea are tou seeling?",
+        "Which types of coffee and tea are you selling?",
         "What kinds of coffees are there?",
         "What kinds of tea are there?",
-        "Any another items are you seelling?"
+        "Any another items are you selling?"
       ],
       "responses": [
-        "We have cappucino, black coffee with normal milk and haffer milk both.",
-        "We have Indian tea and also Green tea in various flouvers."
+        "We have cappuccino, black coffee with normal milk and hafter milk both.",
+        "We have Indian tea and also Green tea in various flowers."
       ]
     },
     {
