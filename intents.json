@@ -18,7 +18,7 @@
     {
       "tag": "greeting",
       "patterns": [
-        "Hi",
+        "Hai",
         "Hey",
         "How are you",
         "Is anyone there?",
@@ -27,7 +27,7 @@
       ],
       "responses": [
         "Hello Sir",
-        "Hello, nice too see you",
+        "Hello, nice too see you sir",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
       ]
@@ -93,6 +93,7 @@
     {
       "tag": "funny",
       "patterns": [
+        "joke sunao",
         "Tell me a joke!",
         "Tell me something funny!",
         "Do you know a joke?"
@@ -101,6 +102,44 @@
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
         "What did the buffalo say when his son left for college? Bison."
       ]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what is time", "time", "samay"],
+      "responses": ["time"]
+    },
+    {
+      "tag": "date",
+      "patterns": ["what is date", "date of the day", "tarikh", "todays date"],
+      "responses": ["date"]
+    },
+    {
+      "tag": "day",
+      "patterns": [
+        "what is day",
+        "day of the month",
+        "day of today",
+        "din konsa",
+        "todays date"
+      ],
+      "responses": ["day"]
+    },
+    {
+      "tag": "wikipedia",
+      "patterns": ["who is", "about", "what is", "wikipedia of", "wikipedia"],
+      "responses": ["wikipedia"]
+    },
+    {
+      "tag": "google",
+      "patterns": [
+        "google search",
+        "google",
+        "search",
+        "who is",
+        "about",
+        "what is"
+      ],
+      "responses": ["google"]
     }
   ]
 }
