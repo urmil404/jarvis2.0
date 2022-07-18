@@ -65,6 +65,8 @@ def Main():
                     InputExecution(reply, sentence)
                 elif "google" in reply:
                     InputExecution(reply, result)
+                elif "joke" in reply:
+                    NonInputExecution(reply)
                 else:
                     Bol(reply)
     # else:

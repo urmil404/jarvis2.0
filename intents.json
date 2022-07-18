@@ -4,12 +4,15 @@
       "tag": "identity",
       "patterns": [
         "your name",
+        "ae topa",
         "what is your name",
         "who are you",
         "what are you"
       ],
       "responses": [
         "Jarvis",
+        "Bolo Bolo Mitra!",
+        "Ja ne Topa",
         "I am Jarvis",
         "Hello, i am jarvis",
         "Hi, i am jarvis"
@@ -91,17 +94,15 @@
       "responses": ["Delivery takes 2-4 days", "Shipping takes 2-4 days"]
     },
     {
-      "tag": "funny",
+      "tag": "joke",
       "patterns": [
         "joke sunao",
+        "joke batao",
         "Tell me a joke!",
         "Tell me something funny!",
         "Do you know a joke?"
       ],
-      "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
-      ]
+      "responses": ["joke"]
     },
     {
       "tag": "time",

@@ -1,5 +1,6 @@
 import datetime
 from Speak import Bol
+import pyjokes
 
 
 def Time():
@@ -17,6 +18,11 @@ def Day():
     Bol(day)
 
 
+def Joke():
+    funny = pyjokes.get_joke()
+    Bol(funny)
+
+
 def NonInputExecution(query):
     query = str(query)
 
@@ -26,6 +32,8 @@ def NonInputExecution(query):
         Date()
     elif "day" in query:
         Day()
+    elif "joke" in query:
+        Joke()
 
 
 def InputExecution(tag, query):
@@ -43,4 +51,5 @@ def InputExecution(tag, query):
         query = query.replace("who is", "")
         query = query.replace("about", "")
         import pywhatkit
+
         pywhatkit.search(query)
