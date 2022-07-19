@@ -102,8 +102,8 @@
    <widget class="QLabel" name="gif_2">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>20</y>
+      <x>370</x>
+      <y>70</y>
       <width>1221</width>
       <height>591</height>
      </rect>
@@ -121,8 +121,8 @@
    <widget class="QLabel" name="gif_4">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>290</y>
+      <x>30</x>
+      <y>390</y>
       <width>341</width>
       <height>271</height>
      </rect>
@@ -132,29 +132,6 @@
     </property>
     <property name="pixmap">
      <pixmap>../G.U.I Material/VoiceReg/Ntuks.gif</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="txt_time">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>570</y>
-      <width>341</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:Transparent;
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../G.U.I Material/B.G/gyhf.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -244,17 +221,65 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="ojb_t1">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>730</y>
+      <width>256</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Harlow Solid Italic</family>
+      <pointsize>20</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;
+border-radius:none;
+color:white;</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="obj_t2">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>730</y>
+      <width>256</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Harlow Solid Italic</family>
+      <pointsize>20</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;
+border-radius:none;
+color:white;</string>
+    </property>
+   </widget>
    <zorder>BG_black</zorder>
    <zorder>bg_2</zorder>
    <zorder>bg_3</zorder>
    <zorder>gif_1</zorder>
    <zorder>gif_2</zorder>
    <zorder>gif_4</zorder>
-   <zorder>txt_time</zorder>
    <zorder>bg_4</zorder>
    <zorder>btn_start</zorder>
    <zorder>bg_5</zorder>
    <zorder>btn_stop</zorder>
+   <zorder>ojb_t1</zorder>
+   <zorder>obj_t2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

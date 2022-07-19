@@ -73,5 +73,5 @@ def Main():
     #     print(f"{Name}: I do not understand...")
 
 
-while True:
-    Main()
+# while True:
+#     Main()
