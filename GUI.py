@@ -14,9 +14,9 @@ class MainThread(QThread):
     def __init__(self):
         super(MainThread, self).__init__()
 
-        def run(self):
-            while True:
-                Jarvis.Main()
+    def run(self):
+        print("_________M_________")
+        Jarvis.Main()
 
 
 startExe = MainThread()
@@ -55,7 +55,6 @@ class GUI_MOVIE(QMainWindow):
         timer.timeout.connect(self.showTime)
         timer.start(10)
         startExe.start()
-        startExe.run()
 
 
     def showTime(self):
