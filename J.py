@@ -39,19 +39,19 @@ class Ui_MainWindow(object):
         self.bg_3.setScaledContents(True)
         self.bg_3.setObjectName("bg_3")
         self.gif_1 = QtWidgets.QLabel(self.centralwidget)
-        self.gif_1.setGeometry(QtCore.QRect(20, 80, 341, 121))
+        self.gif_1.setGeometry(QtCore.QRect(20, 30, 341, 121))
         self.gif_1.setText("")
         self.gif_1.setPixmap(QtGui.QPixmap("../G.U.I Material/ExtraGui/initial.gif"))
         self.gif_1.setScaledContents(True)
         self.gif_1.setObjectName("gif_1")
         self.gif_2 = QtWidgets.QLabel(self.centralwidget)
-        self.gif_2.setGeometry(QtCore.QRect(370, 70, 1221, 591))
+        self.gif_2.setGeometry(QtCore.QRect(420, 70, 1171, 541))
         self.gif_2.setText("")
         self.gif_2.setPixmap(QtGui.QPixmap("../G.U.I Material/ExtraGui/live.gif"))
         self.gif_2.setScaledContents(True)
         self.gif_2.setObjectName("gif_2")
         self.gif_4 = QtWidgets.QLabel(self.centralwidget)
-        self.gif_4.setGeometry(QtCore.QRect(30, 390, 341, 271))
+        self.gif_4.setGeometry(QtCore.QRect(30, 220, 341, 271))
         self.gif_4.setText("")
         self.gif_4.setPixmap(QtGui.QPixmap("../G.U.I Material/VoiceReg/Ntuks.gif"))
         self.gif_4.setScaledContents(True)
@@ -85,28 +85,38 @@ class Ui_MainWindow(object):
         self.bg_5.setScaledContents(True)
         self.bg_5.setObjectName("bg_5")
         self.ojb_t1 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.ojb_t1.setGeometry(QtCore.QRect(580, 730, 256, 51))
+        self.ojb_t1.setGeometry(QtCore.QRect(110, 560, 381, 121))
         font = QtGui.QFont()
-        font.setFamily("Harlow Solid Italic")
-        font.setPointSize(20)
-        font.setItalic(True)
+        font.setFamily("Maiandra GD")
+        font.setPointSize(26)
+        font.setItalic(False)
         self.ojb_t1.setFont(font)
         self.ojb_t1.setAutoFillBackground(False)
         self.ojb_t1.setStyleSheet("background-color:transparent;\n"
 "border-radius:none;\n"
-"color:white;")
+"color:white;\n"
+"text-align:center;")
         self.ojb_t1.setObjectName("ojb_t1")
         self.obj_t2 = QtWidgets.QTextBrowser(self.centralwidget)
-        self.obj_t2.setGeometry(QtCore.QRect(850, 730, 256, 51))
+        self.obj_t2.setGeometry(QtCore.QRect(100, 690, 381, 111))
         font = QtGui.QFont()
-        font.setFamily("Harlow Solid Italic")
-        font.setPointSize(20)
-        font.setItalic(True)
+        font.setFamily("Maiandra GD")
+        font.setPointSize(26)
+        font.setItalic(False)
         self.obj_t2.setFont(font)
         self.obj_t2.setStyleSheet("background-color:transparent;\n"
 "border-radius:none;\n"
 "color:white;")
         self.obj_t2.setObjectName("obj_t2")
+        self.txt_final = QtWidgets.QTextBrowser(self.centralwidget)
+        self.txt_final.setGeometry(QtCore.QRect(430, 650, 801, 161))
+        font = QtGui.QFont()
+        font.setFamily("Monaco")
+        font.setPointSize(28)
+        self.txt_final.setFont(font)
+        self.txt_final.setStyleSheet("background-color:transparant;\n"
+"color:green;")
+        self.txt_final.setObjectName("txt_final")
         self.BG_black.raise_()
         self.bg_2.raise_()
         self.bg_3.raise_()
@@ -119,6 +129,7 @@ class Ui_MainWindow(object):
         self.btn_stop.raise_()
         self.ojb_t1.raise_()
         self.obj_t2.raise_()
+        self.txt_final.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1635, 26))
@@ -134,6 +145,16 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.ojb_t1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Maiandra GD\'; font-size:26pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Dubai Medium\'; font-size:36pt; color:#ffff00;\">Date</span></p></body></html>"))
+        self.obj_t2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Maiandra GD\'; font-size:26pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Dubai Medium\'; font-size:36pt; color:#ffff00;\">Time</span></p></body></html>"))
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 import datetime
 from Speak import Bol
 import pyjokes
-
+from datetime import datetime
 
 def Time():
     time = datetime.datetime.now().strftime("%H:%M")
@@ -34,6 +34,18 @@ def NonInputExecution(query):
         Day()
     elif "joke" in query:
         Joke()
+
+
+def wishMe():
+    hour = int(datetime.now().hour)
+    if hour >= 0 and hour <= 12:
+        Bol("Good Morning")
+    elif hour >= 12 and hour <= 18:
+        Bol("Good Afternoon")
+    else:
+        Bol("Good Evening")
+
+    Bol("Jarvis here ,How may i help you Sir ?")
 
 
 def InputExecution(tag, query):

@@ -4,6 +4,7 @@ import re
 import torch
 from Brain import NeuralNet
 from NeauralNetwork import bag_of_words, tokenize
+from datetime import datetime
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 with open("intents.json", "r") as json_data:
@@ -28,11 +29,12 @@ model.eval()
 Name = "JARVIS"
 from Listen import Listen
 from Speak import Bol
-from Task import NonInputExecution
+from Task import NonInputExecution, wishMe
 from Task import InputExecution
 
 
 def Main():
+
     sentence = Listen()
     result = str(sentence)
     if sentence == "bye":
@@ -69,9 +71,8 @@ def Main():
                     NonInputExecution(reply)
                 else:
                     Bol(reply)
+
     # else:
     #     print(f"{Name}: I do not understand...")
-
-
-# while True:
-#     Main()
+    while True:
+        Main()

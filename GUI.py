@@ -8,14 +8,15 @@ from PyQt5.QtCore import Qt, QTimer, QTime, QDate
 from PyQt5.uic import loadUi
 import sys
 import Jarvis
+from Task import wishMe
 
 
 class MainThread(QThread):
     def __init__(self):
         super(MainThread, self).__init__()
+        
 
     def run(self):
-        print("_________M_________")
         Jarvis.Main()
 
 
@@ -24,7 +25,6 @@ startExe = MainThread()
 class GUI_MOVIE(QMainWindow):
     def __init__(self):
         super().__init__()
-
         self.gui = Ui_MainWindow()
         self.gui.setupUi(self)
 
@@ -50,11 +50,19 @@ class GUI_MOVIE(QMainWindow):
         )
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
-
+        
+        wishMe()
+        
+        self.gui.txt_final.setText(vvv)
+        
         timer = QTimer(self)
         timer.timeout.connect(self.showTime)
         timer.start(10)
+        
+
+        
         startExe.start()
+        
 
 
     def showTime(self):
