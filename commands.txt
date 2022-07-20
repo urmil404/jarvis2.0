@@ -1,0 +1,41 @@
+"your name",
+"what is your name",
+"who are you",
+"what are you"
+"Hai",
+"Hey",
+"How are you",
+"Is anyone there?",
+"Hello",
+"Hello Jarvis"
+"Bye", "See you later", "Goodbye"
+"Thanks", "Thank you", "That's helpful", "Thank's a lot!"
+"Which items do you have?",
+"What kinds of items are there?",
+"What do you sell?"
+"Do you take credit cards?",
+"Do you accept Mastercard?",
+"Can I pay with Paypal?",
+"Are you cash only?"
+"How long does delivery take?",
+"How long does shipping take?",
+"When do I get my delivery?"
+"joke sunao",
+"joke batao",
+"Tell me a joke!",
+"Tell me something funny!",
+"Do you know a joke?"
+"what is time", "time", "samay"
+"what is date", "date of the day", "tarikh", "todays date"
+"what is day",
+"day of the month",
+"day of today",
+"din konsa",
+"todays date"
+"who is", "about", "what is", "wikipedia of", "wikipedia"
+"google search",
+"google",
+"search",
+"who is",
+"about",
+"what is"

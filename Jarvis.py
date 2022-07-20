@@ -1,5 +1,6 @@
 import random
 import json
+import re
 import torch
 from Brain import NeuralNet
 from NeauralNetwork import bag_of_words, tokenize
@@ -22,15 +23,18 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
+#####################################
 
 Name = "JARVIS"
 from Listen import Listen
 from Speak import Bol
+from Task import NonInputExecution
+from Task import InputExecution
 
 
 def Main():
     sentence = Listen()
-
+    result = str(sentence)
     if sentence == "bye":
         exit()
 
@@ -51,10 +55,23 @@ def Main():
         for intent in intents["intents"]:
             if tag == intent["tag"]:
                 reply = random.choice(intent["responses"])
-                Bol(reply)
+                if "time" in reply:
+                    NonInputExecution(reply)
+                elif "date" in reply:
+                    NonInputExecution(reply)
+                elif "day" in reply:
+                    NonInputExecution(reply)
+                elif "wikipedia" in reply:
+                    InputExecution(reply, sentence)
+                elif "google" in reply:
+                    InputExecution(reply, result)
+                elif "joke" in reply:
+                    NonInputExecution(reply)
+                else:
+                    Bol(reply)
     # else:
     #     print(f"{Name}: I do not understand...")
 
 
-while(True):
-    Main()
+# while True:
+#     Main()
