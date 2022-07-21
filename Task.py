@@ -69,6 +69,7 @@ def InputExecution(tag, query):
         Bol(result)
 
     elif "google" in tag:
+        print("Googling...")
         query = str(query).replace("google", "")
         query = query.replace("google search", "")
         query = query.replace("search", "")

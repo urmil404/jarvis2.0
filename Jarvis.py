@@ -41,13 +41,13 @@ model.load_state_dict(model_state)
 model.eval()
 
 
-
 Name = "JARVIS"
 
 
 class MainThread(QThread):
     def __init__(self):
         super(MainThread, self).__init__()
+
 
 startExe = MainThread()
 
@@ -62,6 +62,9 @@ class GUI_MOVIE(QMainWindow):
         self.gui.btn_start.clicked.connect(self.startTask)
         self.gui.btn_stop.clicked.connect(self.close)
 
+    def close(self):
+        exit()
+
     def startTask(self):
         self.gui.label1 = QtGui.QMovie("public//initial.gif")
         self.gui.gif_1.setMovie(self.gui.label1)
@@ -75,7 +78,7 @@ class GUI_MOVIE(QMainWindow):
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
 
-        wishMe()
+        # wishMe()
 
         self.gui.listener.setText("Thinking...")
 
@@ -109,6 +112,7 @@ class GUI_MOVIE(QMainWindow):
                 for intent in intents["intents"]:
                     if tag == intent["tag"]:
                         reply = random.choice(intent["responses"])
+                        print(f"Reply:::=>{reply}")
                         if "time" in reply:
                             NonInputExecution(reply)
                         elif "date" in reply:
@@ -124,7 +128,6 @@ class GUI_MOVIE(QMainWindow):
                         else:
                             self.gui.speaker.setText(reply)
                             Bol(reply)
-
 
     def showTime(self):
         current_time = QTime.currentTime()
