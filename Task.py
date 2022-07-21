@@ -46,7 +46,7 @@ def wishMe():
     else:
         Bol("Good Evening")
 
-    Bol("Jarvis here, Hello Sir Let me check the routine of the day!!")
+    Bol("Jarvis here, Hello Sir")
     Bol("Today is")
     Day()
 

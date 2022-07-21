@@ -12,9 +12,6 @@ from Task import wishMe
 from Listen import Suno
 from Speak import Bol
 # vvv = Listen()
-listeningSir = Suno()
-print(listeningSir)
-exit()
 class MainThread(QThread):
     def __init__(self):
         super(MainThread, self).__init__()

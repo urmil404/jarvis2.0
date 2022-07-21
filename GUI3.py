@@ -9,8 +9,6 @@ from PyQt5.uic import loadUi
 import sys
 import Jarvis
 from Task import wishMe
-
-
 import random
 import json
 import re
@@ -18,6 +16,11 @@ import torch
 from Brain import NeuralNet
 from NeauralNetwork import bag_of_words, tokenize
 from datetime import datetime
+from Listen import Suno
+from Speak import Bol
+from Task import NonInputExecution
+from Task import InputExecution
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 with open("intents.json", "r") as json_data:
@@ -37,10 +40,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-from Listen import Suno
-from Speak import Bol
-from Task import NonInputExecution
-from Task import InputExecution
+
 
 Name = "JARVIS"
 
@@ -48,11 +48,6 @@ Name = "JARVIS"
 class MainThread(QThread):
     def __init__(self):
         super(MainThread, self).__init__()
-
-
-#     def run(self):
-#         Jarvis.Main()
-
 
 startExe = MainThread()
 
@@ -80,7 +75,7 @@ class GUI_MOVIE(QMainWindow):
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
 
-        # wishMe()
+        wishMe()
 
         self.gui.txt_final.setText("Listening...")
 
@@ -92,7 +87,7 @@ class GUI_MOVIE(QMainWindow):
         while True:
             sentence = Suno()
             result = str(sentence)
-            if sentence == "bye":
+            if sentence == "bye bye":
                 exit()
             else:
                 self.gui.txt_final.setText(sentence)
