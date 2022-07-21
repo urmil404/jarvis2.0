@@ -8,7 +8,7 @@ from PyQt5.QtCore import Qt, QTimer, QTime, QDate
 from PyQt5.uic import loadUi
 import sys
 import time
-from Jarvis import JARVIS
+from Jarvis_old import JARVIS
 from Task import wishMe
 from Listen import Suno
 from Speak import Bol

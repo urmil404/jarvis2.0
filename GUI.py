@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QTimer, QTime, QDate
 from PyQt5.uic import loadUi
 import sys
-import Jarvis
+import Jarvis_old
 from Task import wishMe
 from Listen import Suno
 from Speak import Bol
@@ -18,7 +18,7 @@ class MainThread(QThread):
         
 
     def run(self):
-        Jarvis.Main()
+        Jarvis_old.Main()
 
 
 startExe = MainThread()
