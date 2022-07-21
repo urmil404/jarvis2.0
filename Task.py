@@ -1,7 +1,8 @@
-import datetime
 from Speak import Bol
 import pyjokes
+import datetime
 from datetime import datetime
+from PyQt5.QtCore import Qt, QTime, QDate
 
 def Time():
     time = datetime.datetime.now().strftime("%H:%M")
@@ -14,7 +15,7 @@ def Date():
 
 
 def Day():
-    day = datetime.datetime.now().strftime("%A")
+    day = datetime.now().strftime("%A")
     Bol(day)
 
 
@@ -45,7 +46,18 @@ def wishMe():
     else:
         Bol("Good Evening")
 
-    Bol("Jarvis here ,How may i help you Sir ?")
+    Bol("Jarvis here, Hello Sir Let me check the routine of the day!!")
+    Bol("Today is")
+    Day()
+
+class Tasking:
+    def showTime(self):
+        current_time = QTime.currentTime()
+        current_date = QDate.currentDate()
+        label_time = current_time.toString("hh:mm:ss")
+        label_date = current_date.toString(Qt.ISODate)
+        self.gui.ojb_t1.setText(label_date)
+        self.gui.obj_t2.setText(label_time)
 
 
 def InputExecution(tag, query):
