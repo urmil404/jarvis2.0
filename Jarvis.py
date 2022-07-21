@@ -77,7 +77,7 @@ class GUI_MOVIE(QMainWindow):
 
         wishMe()
 
-        self.gui.txt_final.setText("Listening...")
+        self.gui.listener.setText("Thinking...")
 
         timer = QTimer(self)
         timer.timeout.connect(self.showTime)
@@ -87,10 +87,10 @@ class GUI_MOVIE(QMainWindow):
         while True:
             sentence = Suno()
             result = str(sentence)
-            if sentence == "bye bye":
+            if sentence == "bye":
                 exit()
             else:
-                self.gui.txt_final.setText(sentence)
+                self.gui.listener.setText(sentence)
 
             sentence = tokenize(sentence)
             X = bag_of_words(sentence, all_words)
@@ -122,7 +122,9 @@ class GUI_MOVIE(QMainWindow):
                         elif "joke" in reply:
                             NonInputExecution(reply)
                         else:
+                            self.gui.speaker.setText(reply)
                             Bol(reply)
+
 
     def showTime(self):
         current_time = QTime.currentTime()
