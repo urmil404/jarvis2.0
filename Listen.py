@@ -1,11 +1,11 @@
 import speech_recognition as sr
 
-def Listen():
+def Suno():
     r = sr.Recognizer()
 
     with sr.Microphone() as source:
         print("Listening..")
-        r.energy_threshold = 5000
+        r.energy_threshold = 4000
         r.pause_threshold = 1
         audio = r.listen(source,0,3) #0,5
 

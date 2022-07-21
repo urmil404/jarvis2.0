@@ -4,7 +4,6 @@
       "tag": "identity",
       "patterns": [
         "your name",
-        "ae topa",
         "what is your name",
         "who are you",
         "what are you"
@@ -12,11 +11,15 @@
       "responses": [
         "Jarvis",
         "Bolo Bolo Mitra!",
-        "Ja ne Topa",
         "I am Jarvis",
         "Hello, i am jarvis",
         "Hi, i am jarvis"
       ]
+    },
+    {
+      "tag": "myhistory",
+      "patterns": ["about", "your self", "yourself"],
+      "responses": ["Hi, My self Jarvis, I am Developed by Mr.Urmil"]
     },
     {
       "tag": "greeting",
@@ -32,7 +35,8 @@
         "Hello Sir",
         "Hello, nice too see you sir",
         "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Hi there, how can I help?",
+        "Any time Sir!"
       ]
     },
     {

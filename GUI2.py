@@ -7,21 +7,24 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QTimer, QTime, QDate
 from PyQt5.uic import loadUi
 import sys
-import Jarvis_old
+import time
+from Jarvis_old import JARVIS
 from Task import wishMe
 from Listen import Suno
 from Speak import Bol
-# vvv = Listen()
+
+
 class MainThread(QThread):
     def __init__(self):
         super(MainThread, self).__init__()
-        
 
-    def run(self):
-        Jarvis_old.Main()
+    # def run(self):
+    #     j = JARVIS()
+    #     j.PROCESS_()
 
 
 startExe = MainThread()
+
 
 class GUI_MOVIE(QMainWindow):
     def __init__(self):
@@ -34,43 +37,40 @@ class GUI_MOVIE(QMainWindow):
         self.gui.btn_stop.clicked.connect(self.close)
 
     def startTask(self):
-        self.gui.label1 = QtGui.QMovie(
-            "public//initial.gif"
-        )
+        self.gui.label1 = QtGui.QMovie("public//initial.gif")
         self.gui.gif_1.setMovie(self.gui.label1)
         self.gui.label1.start()
 
-        self.gui.label2 = QtGui.QMovie(
-            "public//live.gif"
-        )
+        self.gui.label2 = QtGui.QMovie("public//live.gif")
         self.gui.gif_2.setMovie(self.gui.label2)
         self.gui.label2.start()
 
-        self.gui.label4 = QtGui.QMovie(
-            "public//ring.gif"
-        )
+        self.gui.label4 = QtGui.QMovie("public//ring.gif")
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
-        
-        wishMe()
-        
-        self.gui.txt_final.setText(listeningSir)
-        
+
+        # wishMe()
+
         timer = QTimer(self)
         timer.timeout.connect(self.showTime)
         timer.start(10)
         startExe.start()
-        
 
+        while True:
+            sentence = Suno()
+            # result = str(sentence)
+            if sentence == "bye":
+                exit()
+            else:
+                self.gui.txt_final.setText(sentence)
 
     def showTime(self):
         current_time = QTime.currentTime()
         current_date = QDate.currentDate()
-        label_time = current_time.toString('hh:mm:ss')
+        label_time = current_time.toString("hh:mm:ss")
         label_date = current_date.toString(Qt.ISODate)
         self.gui.ojb_t1.setText(label_date)
         self.gui.obj_t2.setText(label_time)
-        
 
 
 GUIApp = QApplication(sys.argv)
