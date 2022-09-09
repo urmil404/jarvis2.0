@@ -114,19 +114,21 @@ class GUI_MOVIE(QMainWindow):
                         reply = random.choice(intent["responses"])
                         print(f"Reply:::=>{reply}")
                         if "time" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply, self)
                         elif "date" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply,self)
                         elif "day" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply,self)
                         elif "wikipedia" in reply:
                             InputExecution(reply, sentence)
                         elif "google" in reply:
                             InputExecution(reply, result)
+                        elif "youtube" in reply:
+                            InputExecution(reply, result)
                         elif "joke" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply, self)
                         elif "weather" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply, self)
                         else:
                             self.gui.speaker.setText(reply)
                             Bol(reply)
