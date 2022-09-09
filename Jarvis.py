@@ -7,7 +7,6 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt, QTimer, QTime, QDate
 from PyQt5.uic import loadUi
 import sys
-import Jarvis_old
 from Task import wishMe
 import random
 import json
@@ -78,7 +77,7 @@ class GUI_MOVIE(QMainWindow):
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
 
-        # wishMe()
+        wishMe()
 
         self.gui.listener.setText("Thinking...")
 

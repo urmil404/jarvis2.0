@@ -1,6 +1,6 @@
 from Speak import Bol
 import pyjokes
-import datetime
+# import datetime
 from datetime import datetime
 from PyQt5.QtCore import Qt, QTime, QDate
 
