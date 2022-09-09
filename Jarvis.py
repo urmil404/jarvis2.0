@@ -1,3 +1,4 @@
+from tkinter import N
 from J import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import *
@@ -77,7 +78,7 @@ class GUI_MOVIE(QMainWindow):
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
 
-        wishMe()
+        # wishMe()
 
         self.gui.listener.setText("Thinking...")
 
@@ -89,7 +90,7 @@ class GUI_MOVIE(QMainWindow):
         while True:
             sentence = Suno()
             result = str(sentence)
-            if sentence == "bye":
+            if sentence == "bye bye":
                 exit()
             else:
                 self.gui.listener.setText(sentence)
@@ -123,6 +124,8 @@ class GUI_MOVIE(QMainWindow):
                         elif "google" in reply:
                             InputExecution(reply, result)
                         elif "joke" in reply:
+                            NonInputExecution(reply)
+                        elif "weather" in reply:
                             NonInputExecution(reply)
                         else:
                             self.gui.speaker.setText(reply)

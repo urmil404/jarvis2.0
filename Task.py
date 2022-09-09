@@ -1,5 +1,6 @@
 from Speak import Bol
 import pyjokes
+import weather
 # import datetime
 from datetime import datetime
 from PyQt5.QtCore import Qt, QTime, QDate
@@ -35,6 +36,8 @@ def NonInputExecution(query):
         Day()
     elif "joke" in query:
         Joke()
+    elif "weather" in query:
+        weather.weathernews()
 
 
 def wishMe():
@@ -67,6 +70,13 @@ def InputExecution(tag, query):
 
         result = wikipedia.summary(name, sentences=2)
         Bol(result)
+        
+    elif "youtube" in tag:
+        print("youtubing...")
+        query = str(query).replace("youtube", "")
+        query = query.replace("on youtube", "")
+        import pywhatkit
+        pywhatkit.search(query)
 
     elif "google" in tag:
         print("Googling...")
