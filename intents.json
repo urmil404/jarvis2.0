@@ -119,6 +119,21 @@
       "responses": ["date"]
     },
     {
+      "tag": "info",
+      "patterns": ["information", "info", "information of"],
+      "responses": ["info"]
+    },
+    {
+      "tag": "news",
+      "patterns": ["news", "news of the day", "todays news"],
+      "responses": ["news"]
+    },
+    {
+      "tag": "music",
+      "patterns": ["music", "music of the day", "play music", "music play"],
+      "responses": ["music"]
+    },
+    {
       "tag": "weather",
       "patterns": [
         "what is weather",

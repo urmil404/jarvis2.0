@@ -78,7 +78,7 @@ class GUI_MOVIE(QMainWindow):
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
 
-        # wishMe()
+        wishMe(self)
 
         self.gui.listener.setText("Thinking...")
 
@@ -120,7 +120,7 @@ class GUI_MOVIE(QMainWindow):
                         elif "day" in reply:
                             NonInputExecution(reply,self)
                         elif "wikipedia" in reply:
-                            InputExecution(reply, sentence)
+                            InputExecution(reply, sentence,self)
                         elif "google" in reply:
                             InputExecution(reply, result)
                         elif "youtube" in reply:
@@ -128,6 +128,10 @@ class GUI_MOVIE(QMainWindow):
                         elif "joke" in reply:
                             NonInputExecution(reply, self)
                         elif "weather" in reply:
+                            NonInputExecution(reply, self)
+                        elif "music" in reply:
+                            InputExecution(reply,result,self)
+                        elif "news" in reply:
                             NonInputExecution(reply, self)
                         else:
                             self.gui.speaker.setText(reply)
