@@ -1,11 +1,16 @@
 from Speak import Bol
 import pyjokes
-# import datetime
-from datetime import datetime
+import weather
+import datetime
+from datetime import datetime as dt
 from PyQt5.QtCore import Qt, QTime, QDate
+import wikipedia
+import pywhatkit
+from News import news
+
 
 def Time():
-    time = datetime.datetime.now().strftime("%H:%M")
+    time = dt.now().strftime("%H:%M")
     Bol(time)
 
 
@@ -15,18 +20,21 @@ def Date():
 
 
 def Day():
-    day = datetime.now().strftime("%A")
+    day = dt.now().strftime("%A")
     Bol(day)
 
 
-def Joke():
+def Joke(ref):
+    funny = pyjokes.get_joke()
+    ref.gui.speaker.setText(funny)
+    Bol(funny)
+
+def music():
     funny = pyjokes.get_joke()
     Bol(funny)
 
-
-def NonInputExecution(query):
+def NonInputExecution(query, ref = None):
     query = str(query)
-
     if "time" in query:
         Time()
     elif "date" in query:
@@ -34,11 +42,17 @@ def NonInputExecution(query):
     elif "day" in query:
         Day()
     elif "joke" in query:
-        Joke()
+        Joke(ref)
+    elif "weather" in query:
+        weather.weathernews(ref)
+    elif "news" in query:
+        news(ref)
+    elif "music" in query:
+        music()
 
 
-def wishMe():
-    hour = int(datetime.now().hour)
+def wishMe(ref=None):
+    hour = int(dt.now().hour)
     if hour >= 0 and hour <= 12:
         Bol("Good Morning")
     elif hour >= 12 and hour <= 18:
@@ -46,6 +60,7 @@ def wishMe():
     else:
         Bol("Good Evening")
 
+    ref.gui.listener.setText("Thinking...")
     Bol("Jarvis here, Hello Sir")
     Bol("Today is")
     Day()
@@ -60,13 +75,29 @@ class Tasking:
         self.gui.obj_t2.setText(label_time)
 
 
-def InputExecution(tag, query):
+def InputExecution(tag, query,ref=None):
     if "wikipedia" in tag:
-        name = str(query).replace("about", "").replace("wikipedia", "")
-        import wikipedia
-
-        result = wikipedia.summary(name, sentences=2)
-        Bol(result)
+        try:
+            name = str(query).replace("about", "").replace("wikipedia", "")
+            result = wikipedia.summary(name, sentences=2)
+            ref.gui.speaker.setText(result)
+            Bol(result)
+        except:
+            Bol("Sorry, I could not find any result")
+    
+    elif "music" in tag:
+        print("playing music...")
+        query = str(query).replace("youtube", "")
+        query = query.replace("on youtube", "")
+        pywhatkit.playonyt(query + "music")
+        
+        
+    elif "youtube" in tag:
+        print("youtubing...")
+        query = str(query).replace("youtube", "")
+        query = query.replace("on youtube", "")
+        pywhatkit.playonyt(query)
+        
 
     elif "google" in tag:
         print("Googling...")
@@ -75,6 +106,4 @@ def InputExecution(tag, query):
         query = query.replace("search", "")
         query = query.replace("who is", "")
         query = query.replace("about", "")
-        import pywhatkit
-
         pywhatkit.search(query)

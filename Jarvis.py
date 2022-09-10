@@ -1,3 +1,4 @@
+from tkinter import N
 from J import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import *
@@ -77,7 +78,7 @@ class GUI_MOVIE(QMainWindow):
         self.gui.gif_4.setMovie(self.gui.label4)
         self.gui.label4.start()
 
-        wishMe()
+        wishMe(self)
 
         self.gui.listener.setText("Thinking...")
 
@@ -89,7 +90,7 @@ class GUI_MOVIE(QMainWindow):
         while True:
             sentence = Suno()
             result = str(sentence)
-            if sentence == "bye":
+            if sentence == "bye bye":
                 exit()
             else:
                 self.gui.listener.setText(sentence)
@@ -113,17 +114,25 @@ class GUI_MOVIE(QMainWindow):
                         reply = random.choice(intent["responses"])
                         print(f"Reply:::=>{reply}")
                         if "time" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply, self)
                         elif "date" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply,self)
                         elif "day" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply,self)
                         elif "wikipedia" in reply:
-                            InputExecution(reply, sentence)
+                            InputExecution(reply, sentence,self)
                         elif "google" in reply:
                             InputExecution(reply, result)
+                        elif "youtube" in reply:
+                            InputExecution(reply, result)
                         elif "joke" in reply:
-                            NonInputExecution(reply)
+                            NonInputExecution(reply, self)
+                        elif "weather" in reply:
+                            NonInputExecution(reply, self)
+                        elif "music" in reply:
+                            InputExecution(reply,result,self)
+                        elif "news" in reply:
+                            NonInputExecution(reply, self)
                         else:
                             self.gui.speaker.setText(reply)
                             Bol(reply)

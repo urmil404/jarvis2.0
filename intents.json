@@ -10,7 +10,7 @@
       ],
       "responses": [
         "Jarvis",
-        "Bolo Bolo Mitra!",
+        "I am your personal assistant",
         "I am Jarvis",
         "Hello, i am jarvis",
         "Hi, i am jarvis"
@@ -119,6 +119,31 @@
       "responses": ["date"]
     },
     {
+      "tag": "info",
+      "patterns": ["information", "info", "information of"],
+      "responses": ["info"]
+    },
+    {
+      "tag": "news",
+      "patterns": ["news", "news of the day", "todays news"],
+      "responses": ["news"]
+    },
+    {
+      "tag": "music",
+      "patterns": ["music", "music of the day", "play music", "music play"],
+      "responses": ["music"]
+    },
+    {
+      "tag": "weather",
+      "patterns": [
+        "what is weather",
+        "todays weather",
+        "weather forcast",
+        "weather of the day"
+      ],
+      "responses": ["weathernews"]
+    },
+    {
       "tag": "day",
       "patterns": [
         "what is day",
@@ -145,6 +170,11 @@
         "what is"
       ],
       "responses": ["google"]
+    },
+    {
+      "tag": "youtube",
+      "patterns": ["youtube search", "youtube", "youtube people", "on youtube"],
+      "responses": ["youtube"]
     }
   ]
 }
